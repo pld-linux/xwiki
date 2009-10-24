@@ -21,7 +21,7 @@ NoSource:	0
 Source1:	xwiki-enterprise-wiki-2.0.2.xar
 # NoSource1-md5:	5a760d6d534221745b54acbe09ea51ed
 NoSource:	1
-#Source2:	%{name}-context.xml
+Source2:	%{name}-context.xml
 URL:		http://www.atlassian.com/software/jira/default.jsp
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
