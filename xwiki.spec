@@ -5,7 +5,8 @@
 #   them to DF until it works.
 
 %include	/usr/lib/rpm/macros.java
-Summary:	xwiki
+Summary:	A second generation wiki.
+Summary(pl.UTF-8):	Wiki drugiej generacji.
 Name:		xwiki
 Version:	4.0
 Release:	0.1
@@ -31,7 +32,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xwiki
+XWiki is a platform for developing collaborative web applications using the
+wiki paradigm. This is what makes XWiki a second generation wiki.
+
+%description -l pl.UTF-8
+XWiki jest platformą na bazie której można budować aplikacje spełniające
+paradygmat wiki. To sprawia, że XWiki jest wiki drugiej generacji.
 
 %prep
 %setup -q -c
