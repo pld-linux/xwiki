@@ -22,7 +22,7 @@ Source1:	xwiki-enterprise-wiki-2.0.2.xar
 # NoSource1-md5:	5a760d6d534221745b54acbe09ea51ed
 NoSource:	1
 Source2:	%{name}-context.xml
-URL:		http://www.atlassian.com/software/jira/default.jsp
+URL:		http://www.xwiki.org/
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -50,8 +50,9 @@ install -d $RPM_BUILD_ROOT{%{_datadir},/var/log/%{name}}
 cp -a . $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 # configuration
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/jira,%{_sharedstatedir}/tomcat/conf/Catalina/localhost}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sharedstatedir}/tomcat/conf/Catalina/localhost/jira.xml
+install -d $RPM_BUILD_ROOT{%{_sysconfdir}/%{name},%{_sharedstatedir}/tomcat/conf/Catalina/localhost}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sharedstatedir}/tomcat/conf/Catalina/localhost/%{name}.xml
+ln -s %{_sharedstatedir}/tomcat/conf/Catalina/localhost/%{name}.xml $RPM_BUILD_ROOT%{_sysconfdir}/%{name}/tomcat-context.xml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,5 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/%{name}
 %dir %{_sysconfdir}/%{name}
-%{_sysconfdir}/jira/tomcat-context.xml
+%{_sysconfdir}/%{name}/tomcat-context.xml
 %config(noreplace) %verify(not md5 mtime size) %attr(2775,root,tomcat) %{_sharedstatedir}/tomcat/conf/Catalina/localhost/%{name}.xml
