@@ -5,21 +5,21 @@
 #   them to DF until it works.
 
 %include	/usr/lib/rpm/macros.java
-Summary:	A second generation wiki.
+Summary:	A second generation wiki
 Summary(pl.UTF-8):	Wiki drugiej generacji.
 Name:		xwiki
-Version:	4.0
+Version:	2.0.3
 Release:	0.1
 License:	LGPL
 Group:		Networking/Daemons/Java/Servlets
 # Sources:
-# http://download.forge.objectweb.org/xwiki/xwiki-enterprise-web-2.0.2.war
-# http://download.forge.objectweb.org/xwiki/xwiki-enterprise-wiki-2.0.2.xar
-Source0:	xwiki-enterprise-web-2.0.2.war
-# NoSource0-md5:	1313d8284621f35d40e04cecf3787e6a
+# http://download.forge.objectweb.org/xwiki/xwiki-enterprise-web-2.0.3.war
+# http://download.forge.objectweb.org/xwiki/xwiki-enterprise-wiki-2.0.3.xar
+Source0:	%{name}-enterprise-web-%{version}.war
+# NoSource0-md5:	722dc5be34cde8f6b40d59a1cc04da21
 NoSource:	0
-Source1:	xwiki-enterprise-wiki-2.0.2.xar
-# NoSource1-md5:	5a760d6d534221745b54acbe09ea51ed
+Source1:	%{name}-enterprise-wiki-%{version}.xar
+# NoSource1-md5:	98a9045df7ce58bd7b438a7db140adc8
 NoSource:	1
 Source2:	%{name}-context.xml
 URL:		http://www.xwiki.org/
@@ -32,12 +32,14 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-XWiki is a platform for developing collaborative web applications using the
-wiki paradigm. This is what makes XWiki a second generation wiki.
+XWiki is a platform for developing collaborative web applications
+using the wiki paradigm. This is what makes XWiki a second generation
+wiki.
 
 %description -l pl.UTF-8
-XWiki jest platformą na bazie której można budować aplikacje spełniające
-paradygmat wiki. To sprawia, że XWiki jest wiki drugiej generacji.
+XWiki jest platformą na bazie której można budować aplikacje
+spełniające paradygmat wiki. To sprawia, że XWiki jest wiki drugiej
+generacji.
 
 %prep
 %setup -q -c
