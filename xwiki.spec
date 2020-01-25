@@ -4,7 +4,6 @@
 # - it is nosrc, because sources are quite large, and I don't know to fetch
 #   them to DF until it works.
 
-%include	/usr/lib/rpm/macros.java
 Summary:	A second generation wiki
 Summary(pl.UTF-8):	Wiki drugiej generacji.
 Name:		xwiki
